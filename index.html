@@ -627,12 +627,24 @@
   }
   .benefit-panel.accent li{border-top:1px solid rgba(247,242,231,0.1);color:rgba(247,242,231,0.82);}
   .benefit-panel li:first-of-type{border-top:none;}
+  .li-block{
+    display:block!important;
+    padding-left:24px!important;
+    text-indent:-24px;
+  }
+  .li-block .mark{
+    display:inline-block;
+    width:14px;
+    margin-right:10px;
+    text-indent:0;
+  }
   .benefit-sublist{
     list-style:none;
     margin-top:2px;
     display:flex;
     flex-direction:column;
     gap:4px;
+    text-indent:0;
   }
   .benefit-sublist li{
     display:block!important;
@@ -920,7 +932,26 @@
   /* ================= RESPONSIVE ================= */
   @media (max-width:780px){
     .constat-grid,.steps,.two-col,.included-grid,.video-gallery{grid-template-columns:1fr;}
-    .trust-strip{grid-template-columns:repeat(2,1fr);}
+    .trust-strip{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px 0;
+    }
+    .trust-cell{
+      flex:none;
+      border-left:none;
+      border-top:none;
+      padding:0 10px;
+    }
+    .trust-cell:nth-child(odd){border-right:1px solid rgba(193,127,78,0.3);}
+    .client-row{margin-top:50px;}
+    .client-row .eyebrow{margin-bottom:14px;}
+    .client-names{
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+    }
+    .client-names span{white-space:normal;font-size:17px;}
     section{padding:56px 22px;}
     .hero{padding:64px 22px 72px;}
     .contact-card{flex-direction:column;text-align:center;}
@@ -1143,11 +1174,12 @@ function vinessenPlayDemo(){
         <h3>A real lever of differentiation</h3>
         <ul>
           <li><span class="mark">-</span>A disruptive offer in a category where everything looks alike</li>
-          <li style="flex-wrap:wrap;row-gap:2px;"><span class="mark">-</span><span style="white-space:nowrap;">A concrete argument when selling in</span>
-            <ul class="benefit-sublist" style="flex-basis:100%;margin-left:24px;margin-top:2px;">
-              <li><strong>Hospitality &amp; dining:</strong> makes wine accessible to guests even without a sommelier, and helps train staff</li>
+          <li class="li-block">
+            <span class="mark">-</span>A concrete argument when selling into:
+            <ul class="benefit-sublist" style="margin-left:10px;margin-top:6px;">
+              <li><strong>Hospitality &amp; dining:</strong> makes wine accessible to guests even without a sommelier, turns each glass into an experience, and helps train staff</li>
               <li><strong>Retail:</strong> offers something different that stands out on the shelf, where everything else looks the same</li>
-              <li><strong>E-commerce:</strong> closes the gap of not being able to taste or ask questions - they see the winemaker, hear the story, and buy with the same confidence as in person</li>
+              <li><strong>E-commerce:</strong> fixes the problem of not being able to taste or ask questions - customers see the winemaker, hear the story, and buy with the same confidence as in a store</li>
             </ul>
           </li>
           <li><span class="mark">-</span>Access to 240+ references with no minimum order</li>
@@ -1182,7 +1214,7 @@ function vinessenPlayDemo(){
       <div class="trust-cell"><div class="big">20+</div><div class="lbl">Years of field experience</div></div>
       <div class="trust-cell"><div class="big">240+</div><div class="lbl">Award-winning references</div></div>
       <div class="trust-cell"><div class="big">70+</div><div class="lbl">Partner producers</div></div>
-      <div class="trust-cell"><div class="big">2,000+</div><div class="lbl">Professional clients</div></div>
+      <div class="trust-cell"><div class="big">300+</div><div class="lbl">Professional clients</div></div>
     </div>
     <div class="client-row">
       <span class="eyebrow on-dark">Already trusted by</span>
